@@ -10,7 +10,7 @@ try :
     if keystone.auth_url != keystone.management_url:
       keystone.management_url = keystone.auth_url
 
-    role_name = "role2"
+    role_name = "role1"
     role_exists = False
     roles = keystone.roles.list()
     for r in roles:
@@ -23,6 +23,6 @@ try :
 
     else :
        user_role = keystone.roles.create(role_name)
-       print "Created role %s with id %s" % role_name % user_role.id
+       print "Created role %s" % role_name 
 finally :
     print "Execution Completed."
