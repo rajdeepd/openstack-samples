@@ -7,6 +7,7 @@ openstack-samples
 
 2.  Execute the script to setup the environment variables
 
+
 ```bash
 source openstack_env.sh
 ```
@@ -17,7 +18,6 @@ source openstack_env.sh
 
 1.  Initialize the Nova Client using the following code
 
-```
 credentials = get_nova_credentials_v2()
 nova_client = Client(**credentials)``
 ```
