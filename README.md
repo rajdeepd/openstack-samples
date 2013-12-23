@@ -18,8 +18,9 @@ source openstack_env.sh
 
 1.  Initialize the Nova Client using the following code
 
+```
 credentials = get_nova_credentials_v2()
-nova_client = Client(**credentials)``
+nova_client = Client(**credentials)
 ```
 2.  List VMs using the following command
 
