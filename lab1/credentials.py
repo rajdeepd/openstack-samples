@@ -1,5 +1,5 @@
 import os
-def get_keystone_credentials():
+def get_credentials():
     d = {}
     d['username'] = os.environ['OS_USERNAME']
     d['password'] = os.environ['OS_PASSWORD']

@@ -1,7 +1,7 @@
 import keystoneclient.v2_0.client as ksclient
-from credentials import get_keystone_credentials
+from credentials import get_credentials
 
-credentials = get_keystone_credentials()
+credentials = get_credentials()
 try :
 
     keystone = ksclient.Client(**credentials)
