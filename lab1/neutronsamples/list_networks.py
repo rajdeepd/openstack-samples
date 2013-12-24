@@ -7,6 +7,4 @@ credentials = get_credentials()
 neutron = client.Client(**credentials)
 netw = neutron.list_networks()
 
-
-
 print_networks(netw)
