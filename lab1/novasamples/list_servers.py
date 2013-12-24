@@ -5,4 +5,3 @@ credentials = get_nova_credentials()
 nova_client = nvclient.Client(**credentials)
 
 print nova_client.servers.list()
-

@@ -1,4 +1,6 @@
 import os
+
+
 def get_credentials():
     d = {}
     d['username'] = os.environ['OS_USERNAME']
@@ -6,6 +8,7 @@ def get_credentials():
     d['auth_url'] = os.environ['OS_AUTH_URL']
     d['tenant_name'] = os.environ['OS_TENANT_NAME']
     return d
+
 
 def get_nova_credentials():
     d = {}
@@ -15,6 +18,7 @@ def get_nova_credentials():
     d['project_id'] = os.environ['OS_TENANT_NAME']
     return d
 
+
 def get_nova_credentials_v2():
     d = {}
     d['version'] = '2'
@@ -23,6 +27,8 @@ def get_nova_credentials_v2():
     d['auth_url'] = os.environ['OS_AUTH_URL']
     d['project_id'] = os.environ['OS_TENANT_NAME']
     return d
+
+
 def get_nova_credentials_v11():
     d = {}
     d['version'] = '1.1'
