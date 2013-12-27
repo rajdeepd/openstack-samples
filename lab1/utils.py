@@ -1,12 +1,13 @@
 
-def print_networks(netw):
-    net_dict = netw['networks']
-    print'------------------------------------------------------'
-    for n in net_dict:
-        print 'name                   : %s' % n['name']
-        print 'id                     : %s' % n['id']
-        print 'subnets                : %s' % n['subnets']
-        print 'status                 : %s' % n['status']
-        print 'tenant_id              : %s' % n['tenant_id']
-        print 'provider:network_type  : %s' % n['provider:network_type']
-        print'------------------------------------------------------'
+def print_values(val,type):
+    val_type = None
+    if type=='ports':
+         val_list = val['ports']
+    
+    if type=='networks':
+         val_list = val['networks']
+    #port_list = ports['ports']
+    for p in val_list:
+        for k,v in p.items():
+    	    print "%s : %s" % (k, v)
+        print '\n'    
