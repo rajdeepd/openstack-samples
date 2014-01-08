@@ -10,6 +10,14 @@ def get_credentials():
     return d
 
 
+def get_credentials_tenant(tenant_name):
+    d = {}
+    d['username'] = os.environ['OS_USERNAME']
+    d['password'] = os.environ['OS_PASSWORD']
+    d['auth_url'] = os.environ['OS_AUTH_URL']
+    d['tenant_name'] = tenant_name
+    return d
+
 def get_nova_credentials():
     d = {}
     d['username'] = os.environ['OS_USERNAME']
