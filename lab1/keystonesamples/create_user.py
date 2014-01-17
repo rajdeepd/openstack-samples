@@ -23,7 +23,7 @@ try:
             print "%s already exists" % u.name
             user_exists = True
             break
-    if not(user_exists) :
+    if not(user_exists):
         user = keystone.users.create(req_body['user']['name'],
                                      req_body['user']['password'],
                                      email=req_body['user']['email'],
