@@ -15,7 +15,7 @@ try:
             for r in roles:
                 print r
         except Exception as inst:
-	    print 'Exception %s' % inst
+            print 'Exception %s' % inst
             break
 finally:
     print "Execution Completed."
