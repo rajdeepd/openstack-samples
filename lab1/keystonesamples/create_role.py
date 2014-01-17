@@ -23,4 +23,4 @@ try:
         user_role = keystone.roles.create(role_name)
         print "Created role %s" % role_name
 finally:
-    print "Execution Completed."
+    print "Execution Completed ."
