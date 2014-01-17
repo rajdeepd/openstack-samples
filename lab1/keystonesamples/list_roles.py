@@ -18,4 +18,4 @@ try:
             print 'Exception %s' % inst
             break
 finally:
-    print "Execution Completed."
+    print "Execution Completed. "
