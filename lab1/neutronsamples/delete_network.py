@@ -1,7 +1,7 @@
 from neutronclient.v2_0 import client
 from credentials import get_credentials
 
-network_name = "sample_network"
+network_name = "temp_network"
 credentials = get_credentials()
 neutron = client.Client(**credentials)
 try:
@@ -29,5 +29,8 @@ try:
 
     subnet = neutron.create_subnet(body=body_create_subnet)
     print "Created subnet %s" % subnet
+    
+    neutron.delete_network(network_id)
+    print "Deleted Network %s" %network_id
 finally:
     print "Execution completed"
