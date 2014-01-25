@@ -7,7 +7,7 @@ try:
     cinder_client = client.Client(*credentials, service_type="volume")
     vol_list = cinder_client.volumes.list()
 
-    vol_name = "voltest2"
+    vol_name = "voltest1"
     vol_type = "test"
     vol_size = 1
     vol_exists = False
