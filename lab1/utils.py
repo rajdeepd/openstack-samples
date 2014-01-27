@@ -5,6 +5,8 @@ def print_values(val, type):
         val_list = val['ports']
     if type == 'networks':
         val_list = val['networks']
+    if type == 'routers':
+        val_list = val['routers']
     #port_list = ports['ports']
     for p in val_list:
         for k, v in p.items():
