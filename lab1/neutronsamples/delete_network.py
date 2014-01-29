@@ -29,8 +29,8 @@ try:
 
     subnet = neutron.create_subnet(body=body_create_subnet)
     print "Created subnet %s" % subnet
-    
+
     neutron.delete_network(network_id)
-    print "Deleted Network %s" %network_id
+    print "Deleted Network %s" % network_id
 finally:
     print "Execution completed"
