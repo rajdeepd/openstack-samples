@@ -10,12 +10,12 @@ server_exists = False
 
 for s in servers_list:
     if s.name == server_del:
-        print "the server %s exists" % server_del
+        print "This server %s exists" % server_del
         server_exists = True
         break
 if not server_exists:
-    print "server %s doesnot exist" % server_del
+    print "server %s does not exist" % server_del
 else:
+    print "deleting server.........."
     nova_client.servers.delete(s)
-    print "deleting server............"
     print "server %s deleted" % server_del
