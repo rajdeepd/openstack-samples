@@ -3,9 +3,11 @@ openstack-samples
 
 ###Getting Started
 
-1.  Make sure you updated the script `openstack_env.sh` with appropriate values for the variables.
+1.  Copy `openstack_env.sh.template` to `openstack_env.sh`
 
-2.  Execute the script to setup the environment variables
+2.  Make sure you updated the script `openstack_env.sh` with appropriate values for the variables.
+
+3.  Execute the script to setup the environment variables
 
 
 ```bash
