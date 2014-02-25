@@ -11,8 +11,9 @@ servers = nova_client.servers.list()
 
 for s in servers:
 
-    print "server name:\n", s.name
-    print "server image:\n", s.image
-    print "server flavour:\n", s.flavor
-    print "server key name:\n", s.key_name
-    print "server id:\n", s.id
+    print "server name: %s \n" % s.name
+    print "server image: %s \n" % s.image
+    print "server flavour: %s \n" % s.flavor
+    print "server key name: %s \n" % s.key_name
+    print "server id: %s \n" % s.id
+    print "user_id: %s \n" % s.user_id
