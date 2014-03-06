@@ -6,7 +6,7 @@ try:
     user_name = "test-user"
     keystone = ksclient.Client(**credentials)
     #Please make sure tenant_id is valid
-    tenant_id = 'e32aa814fe95471db493d7fcfc818583'
+    tenant_id = 'cdf2cd92ed764200910f4f0d9de17ce5'
     req_body = {
         "user": {
             "name": user_name,
@@ -30,5 +30,7 @@ try:
                                      tenant_id=req_body['user']['tenantId'],
                                      enabled=req_body['user']['enabled'])
         print "User created %s" % user
+except Exception as e:
+    print e
 finally:
     print "Execution Completed."
