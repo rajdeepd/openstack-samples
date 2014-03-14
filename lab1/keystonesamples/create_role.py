@@ -1,5 +1,6 @@
 import keystoneclient.v2_0.client as ksclient
 from credentials import get_credentials
+import keystoneclient
 
 credentials = get_credentials()
 try:
@@ -11,16 +12,20 @@ try:
 
     role_name = "role1"
     role_exists = False
-    roles = keystone.roles.list()
-    for r in roles:
-        if r.name == role_name:
-            role_exists = True
+    try:
+        roles = keystone.roles.list()
+        for r in roles:
+            if r.name == role_name:
+                role_exists = True
 
-    if role_exists:
-        print "%s already exists" % role_name
+            if role_exists:
+                print "%s already exists" % role_name
+            else:
+                user_role = keystone.roles.create(role_name)
+                print "Created role %s" % role_name
+    except Exception as e:
+        print e
+        print "Exception type %s" % type(e)
 
-    else:
-        user_role = keystone.roles.create(role_name)
-        print "Created role %s" % role_name
 finally:
     print "Execution Completed ."

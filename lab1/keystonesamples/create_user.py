@@ -6,7 +6,7 @@ try:
     user_name = "test-user"
     keystone = ksclient.Client(**credentials)
     #Please make sure tenant_id is valid
-    tenant_id = 'cdf2cd92ed764200910f4f0d9de17ce5'
+    tenant_id = '3406fb2cdaab42ff841644cf007335b3'
     req_body = {
         "user": {
             "name": user_name,
