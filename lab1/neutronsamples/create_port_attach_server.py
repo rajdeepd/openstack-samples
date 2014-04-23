@@ -1,7 +1,6 @@
 from neutronclient.v2_0 import client
 import novaclient.v1_1.client as nvclient
 from credentials import get_credentials
-from utils import print_values_server
 from credentials import get_nova_credentials
 
 credentials = get_nova_credentials()

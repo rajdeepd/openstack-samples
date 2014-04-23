@@ -6,4 +6,4 @@ from utils import print_values
 credentials = get_credentials()
 neutron = client.Client(**credentials)
 ports = neutron.list_ports()
-print print_values(ports, 'ports')
+print_values(ports, 'ports')
