@@ -1,4 +1,5 @@
 
+
 def print_values(val, type):
     val_type = None
     if type == 'ports':
@@ -7,10 +8,12 @@ def print_values(val, type):
         val_list = val['networks']
     if type == 'routers':
         val_list = val['routers']
+    if type == 'hypervisors':
+        val_list = val
     for p in val_list:
         for k, v in p.items():
-            print "%s : %s" % (k, v)
-        print '\n'
+            print("%s : %s" % (k, v))
+        print('\n')
 
 
 def print_values_server(val, server_id, type):
@@ -27,5 +30,24 @@ def print_values_server(val, server_id, type):
                 bool = True
         if bool:
             for k, v in p.items():
-                print "%s : %s" % (k, v)
-            print '\n'
+                print("%s : %s" % (k, v))
+            print('\n')
+
+
+def print_values_hypervisor(hyp_list):
+    hyp_dict_list = []
+    for h in hyp_list:
+        hyp = {}
+        hyp['id'] = h.id
+        hyp['vcpus'] = h.vcpus
+        hyp['local_gb'] = h.local_gb
+        hyp['hypervisor_type'] = h.hypervisor_type
+        hyp['hypervisor_version'] = h.hypervisor_version
+        hyp['free_ram_mb'] = h.free_ram_mb
+        hyp['free_disk_gb'] = h.free_disk_gb
+        hyp['current_workload'] = h.current_workload
+        hyp['running_vms'] = h.running_vms
+        hyp['cpu_info'] = h.cpu_info
+        hyp['disk_available_least'] = h.disk_available_least
+        hyp_dict_list.append(hyp)
+    print(hyp_dict_list)
