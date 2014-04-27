@@ -51,3 +51,20 @@ def print_values_hypervisor(hyp_list):
         hyp['disk_available_least'] = h.disk_available_least
         hyp_dict_list.append(hyp)
     print(hyp_dict_list)
+
+
+def print_values_img(img_list):
+    img_dict_list = []
+    for i in img_list:
+        img = {}
+        img['id'] = i.id
+        img['name'] = i.name
+        img['created'] = i.created
+        img['minDisk'] = i.minDisk
+        img['minRam'] = i.minRam
+        img['progress'] = i.progress
+        img['status'] = i.status
+        img['updated'] = i.updated
+        img['metadata'] = i.metadata
+        img_dict_list.append(img)
+    print(img_dict_list)
