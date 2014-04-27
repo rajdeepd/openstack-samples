@@ -68,3 +68,13 @@ def print_values_img(img_list):
         img['metadata'] = i.metadata
         img_dict_list.append(img)
     print(img_dict_list)
+
+def print_server(s):
+    print("----------------------------------")
+    print("server id: %s" % s.id)
+    print("server name: %s" % s.name)
+    print("server image: %s" % s.image)
+    print("server flavour: %s" % s.flavor)
+    print("server key name: %s" % s.key_name)
+    print("user_id: %s" % s.user_id)
+    print("----------------------------------")
