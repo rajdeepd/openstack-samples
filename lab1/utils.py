@@ -78,3 +78,13 @@ def print_server(s):
     print("server key name: %s" % s.key_name)
     print("user_id: %s" % s.user_id)
     print("----------------------------------")
+
+def print_values_ip(ip_list):
+    ip_dict_lisl = []
+    for i in ip_list:
+        print("----------------------------------")
+        print("fixed_ip : %s" % i.fixed_ip)
+        print("id : %s" % i.id)
+        print("instance_id : %s" % i.instance_id)
+        print("ip : %s" % i.ip)
+        print("pool : %s" % i.pool)
