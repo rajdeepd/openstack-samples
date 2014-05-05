@@ -88,3 +88,10 @@ def print_values_ip(ip_list):
         print("instance_id : %s" % i.instance_id)
         print("ip : %s" % i.ip)
         print("pool : %s" % i.pool)
+
+def print_flavors(flavor_list):
+    for f in flavor_list:
+       print("----------------------------------")
+       print("flavor id : %s" % f.id)
+       print("flavor name : %s" % f.name)
+    print("----------------------------------")
