@@ -95,3 +95,11 @@ def print_flavors(flavor_list):
        print("flavor id : %s" % f.id)
        print("flavor name : %s" % f.name)
     print("----------------------------------")
+
+def print_hosts(host_list):
+    for h in host_list:
+       print("----------------------------------")
+       print("host_name : %s" % h.host_name)
+       print("service : %s" % h.service)
+       print("zone : %s" % h.zone)
+    print("----------------------------------")
