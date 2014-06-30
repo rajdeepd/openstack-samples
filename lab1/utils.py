@@ -69,25 +69,25 @@ def print_values_img(img_list):
         img_dict_list.append(img)
     print(img_dict_list)
 
-def print_server(s):
-    print("----------------------------------")
-    print("server id: %s" % s.id)
-    print("server name: %s" % s.name)
-    print("server image: %s" % s.image)
-    print("server flavour: %s" % s.flavor)
-    print("server key name: %s" % s.key_name)
-    print("user_id: %s" % s.user_id)
-    print("----------------------------------")
+def print_server(server):
+    print("-"*35)
+    print("server id: %(id)s" % server)
+    print("server name: %s" % server.name)
+    print("server image: %s" % server.image)
+    print("server flavour: %s" % server.flavor)
+    print("server key name: %s" % server.key_name)
+    print("user_id: %s" % server.user_id)
+    print("-"*35)
 
 def print_values_ip(ip_list):
     ip_dict_lisl = []
-    for i in ip_list:
-        print("----------------------------------")
-        print("fixed_ip : %s" % i.fixed_ip)
-        print("id : %s" % i.id)
-        print("instance_id : %s" % i.instance_id)
-        print("ip : %s" % i.ip)
-        print("pool : %s" % i.pool)
+    for ip in ip_list:
+        print("-"*35)
+        print("fixed_ip : %s" % ip.fixed_ip)
+        print("id : %s" % ip.id)
+        print("instance_id : %s" % ip.instance_id)
+        print("ip : %s" % ip.ip)
+        print("pool : %s" % ip.pool)
 
 def print_flavors(flavor_list):
     for f in flavor_list:

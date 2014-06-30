@@ -9,6 +9,13 @@ def get_credentials():
     d['tenant_name'] = os.environ['OS_TENANT_NAME']
     return d
 
+def get_credentials_tenant_one(username, password, tenant_name):
+    d = {}
+    d['username'] = username
+    d['password'] = password
+    d['auth_url'] = os.environ['OS_AUTH_URL']
+    d['tenant_name'] = tenant_name
+    return d
 
 def get_cinder_credentials():
     d = [os.environ['OS_USERNAME'], os.environ['OS_PASSWORD'],

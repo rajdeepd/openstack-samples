@@ -7,8 +7,8 @@ from credentials import get_nova_credentials
 credentials = get_nova_credentials()
 nova_client = nvclient.Client(**credentials)
 
-server_id = '9a52795a-a70d-49a8-a5d0-5b38d78bd12d'
-network_id = 'ce5d204a-93f5-43ef-bd89-3ab99ad09a9a'
+server_id = 'b7ab88a1-b2d5-49f5-aa3f-9bcd63e05f03'
+network_id = '240ff9df-df35-43ae-9df5-27fae87f2492'
 server_detail = nova_client.servers.get(server_id)
 print server_detail.id
 #server_list = servers['servers']
