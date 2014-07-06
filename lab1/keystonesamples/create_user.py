@@ -1,16 +1,26 @@
 import keystoneclient.v2_0.client as ksclient
 from credentials import get_credentials
+import sys
 
+args = sys.argv
+args_len = len(sys.argv)
+
+if args_len != 3:
+    print("Please provide the username and password  on command line")
+    print("format : $python -m keystonesamples.create_user <username> <password>")
+    sys.exit()
+
+user_name = args[1]
+password = args[2]
 credentials = get_credentials()
 try:
-    user_name = "test-user"
     keystone = ksclient.Client(**credentials)
     #Please make sure tenant_id is valid
-    tenant_id = '3406fb2cdaab42ff841644cf007335b3'
+    tenant_id = '7414e86191254a85acc8ea3631f6bbb3'
     req_body = {
         "user": {
             "name": user_name,
-            "password": "test-user",
+            "password": password,
             "tenantId": tenant_id,
             "enabled": True,
             "email": None
