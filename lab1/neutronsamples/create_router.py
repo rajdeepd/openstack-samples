@@ -11,7 +11,6 @@ body_value = {'router': {
     'name' : 'user2-router',
     'admin_state_up': True,
 }}
-#response = neutron.create_port(body=body_value)
 router = neutron.create_router(body=body_value)
 print(router)
 print("Execution Completed")

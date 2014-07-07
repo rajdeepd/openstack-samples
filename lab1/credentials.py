@@ -40,6 +40,14 @@ def get_nova_credentials():
     d['project_id'] = os.environ['OS_TENANT_NAME']
     return d
 
+def get_nova_credentials_tenant(username, password, tenant_name, version):
+    d = {}
+    d['version'] = version 
+    d['username'] = username
+    d['api_key'] = password
+    d['auth_url'] = os.environ['OS_AUTH_URL']
+    d['project_id'] = tenant_name
+    return d
 
 def get_nova_credentials_v2():
     d = {}
