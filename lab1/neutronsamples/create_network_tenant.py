@@ -1,7 +1,8 @@
 from neutronclient.v2_0 import client
 from credentials import get_credentials_tenant_one
 
-network_name = "user1-app-network"
+network_name = "user1-db-network"
+subnet_name = "user1-db-network"
 credentials = get_credentials_tenant_one("user1", "user1", "user1-project")
 neutron = client.Client(**credentials)
 try:
@@ -20,7 +21,8 @@ try:
     body_create_subnet = {
         "subnets": [
             {
-                "cidr": "10.9.0.0/24",
+                "name": subnet_name,
+                "cidr": "10.2.0.0/24",
                 "ip_version": 4,
                 "network_id": network_id
             }

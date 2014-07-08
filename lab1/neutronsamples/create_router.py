@@ -8,7 +8,7 @@ credentials = get_credentials_tenant_one('user1', 'user1', 'user1-project')
 neutron = client.Client(**credentials)
 
 body_value = {'router': {
-    'name' : 'user2-router',
+    'name' : 'user1-router',
     'admin_state_up': True,
 }}
 router = neutron.create_router(body=body_value)
