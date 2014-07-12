@@ -1,8 +1,18 @@
 from neutronclient.v2_0 import client
 from credentials import get_credentials_tenant_one
+import sys
 
-network_name = "user1-db-network"
-subnet_name = "user1-db-network"
+args = sys.argv
+args_len = len(sys.argv)
+
+if args_len != 2:
+    print("Please provide the vm name on the command line")
+    print("format : $python -m neutronsamples.create_network_tenant <network_name>")
+    sys.exit()
+
+network_name = args[1]
+
+subnet_name = network_name 
 credentials = get_credentials_tenant_one("user1", "user1", "user1-project")
 neutron = client.Client(**credentials)
 try:
@@ -12,7 +22,7 @@ try:
             "name": network_name,
             "admin_state_up": True,
         }
-                }
+    }
     netw = neutron.create_network(body=body_sample)
     net_dict = netw['network']
     network_id = net_dict['id']
@@ -26,7 +36,7 @@ try:
                 "ip_version": 4,
                 "network_id": network_id
             }
-                ]
+        ]
     }
 
     subnet = neutron.create_subnet(body=body_create_subnet)

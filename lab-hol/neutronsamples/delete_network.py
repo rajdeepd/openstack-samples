@@ -1,36 +1,28 @@
 from neutronclient.v2_0 import client
-from credentials import get_credentials
+from credentials import get_credentials_tenant_one
+import sys
 
-network_name = "temp_network"
-credentials = get_credentials()
+args = sys.argv
+args_len = len(sys.argv)
+
+if args_len != 2:
+    print("Please provide the vm name on the command line")
+    print("format : $python -m neutronsamples.delete_network <network_name>")
+    sys.exit()
+
+network_name = args[1]
+credentials = get_credentials_tenant_one("user1", "user1", "user1-project")
+
 neutron = client.Client(**credentials)
 try:
-    body_sample = {
-        "network":
-        {
-            "name": network_name,
-            "admin_state_up": True
-        }
-                }
-    netw = neutron.create_network(body=body_sample)
-    net_dict = netw['network']
-    network_id = net_dict['id']
-    print "Network %s created" % network_id
-
-    body_create_subnet = {
-        "subnets": [
-            {
-                "cidr": "192.168.199.0/24",
-                "ip_version": 4,
-                "network_id": network_id
-            }
-                ]
-    }
-
-    subnet = neutron.create_subnet(body=body_create_subnet)
-    print "Created subnet %s" % subnet
-
-    neutron.delete_network(network_id)
-    print "Deleted Network %s" % network_id
+    networks = neutron.list_networks()['networks']
+    network_exists = False
+    for n in networks:
+        if n["name"] == network_name:
+            neutron.delete_network(n["id"])
+            print("Deleted network id:%s , name: %s" % (n["id"], n["name"]))
+            network_exists = True
+    if not(network_exists):
+        print("Network %s not found" % network_name)
 finally:
     print "Execution completed"
