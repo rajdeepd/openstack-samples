@@ -16,7 +16,7 @@ credentials = get_credentials()
 try:
     keystone = ksclient.Client(**credentials)
     #Please make sure tenant_id is valid
-    tenant_id = '7414e86191254a85acc8ea3631f6bbb3'
+    tenant_id = '5bf0eff1975b48959412f537d427c66c'
     req_body = {
         "user": {
             "name": user_name,

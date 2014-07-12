@@ -6,15 +6,14 @@ try:
     username = 'user1'
     password = 'user1'
     tenant_name = 'user1-project'
-    vm_name = 'test8'
+    vm_name = 'test3'
     credentials = get_nova_credentials_tenant(username, password, 
                                               tenant_name, '2')
     nova_client = Client(**credentials)
 
     image = nova_client.images.find(name="cirros")
     flavor = nova_client.flavors.find(name="m1.tiny")
-    net_id = '50deff97-343b-483c-803b-53e2740d59ef'
-    net_id = 'cd99c968-1213-45b5-9de2-240d97e73880'
+    net_id = 'ae0618cf-fa34-4e8b-816d-c1356c409119'
     nic_d = [{'net-id': net_id}]
     instance = nova_client.servers.create(name=vm_name, image=image,
                                           flavor=flavor, key_name="keypair-1", 
