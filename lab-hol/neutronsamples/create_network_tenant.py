@@ -5,12 +5,13 @@ import sys
 args = sys.argv
 args_len = len(sys.argv)
 
-if args_len != 2:
+if args_len != 3:
     print("Please provide the vm name on the command line")
-    print("format : $python -m neutronsamples.create_network_tenant <network_name>")
+    print("format : $python -m neutronsamples.create_network_tenant <network_name>i <cidr>")
     sys.exit()
 
 network_name = args[1]
+cidr = args[2]
 
 subnet_name = network_name 
 credentials = get_credentials_tenant_one("user1", "user1", "user1-project")
@@ -32,7 +33,7 @@ try:
         "subnets": [
             {
                 "name": subnet_name,
-                "cidr": "10.2.0.0/24",
+                "cidr": cidr,
                 "ip_version": 4,
                 "network_id": network_id
             }

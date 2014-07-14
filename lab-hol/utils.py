@@ -112,3 +112,21 @@ def check_vm_name(nova_client, name):
             server_exists = True
             break
     return server_exists
+
+def get_router_id(neutron_client, router_name):
+    routers = neutron_client.list_routers()['routers']
+    id  = ''
+    for r in routers:
+        if r['name'] == router_name:
+            id = r['id']
+            break
+    return id
+
+def get_network_id(neutron_client, network_name):
+    networks = neutron_client.list_networks()['networks']
+    id  = ''
+    for n in networks:
+        if n['name'] == network_name:
+            id = n['id']
+            break
+    return id
