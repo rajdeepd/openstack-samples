@@ -130,3 +130,12 @@ def get_network_id(neutron_client, network_name):
             id = n['id']
             break
     return id
+
+def get_subnet_id(neutron_client, subnet_name):
+    subnets = neutron_client.list_subnets()['subnets']
+    id = ''
+    for s in subnets:
+        if s['name'] == subnet_name:
+            id = s['id']
+            break
+    return id
