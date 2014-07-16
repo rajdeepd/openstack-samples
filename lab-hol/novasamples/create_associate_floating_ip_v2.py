@@ -22,7 +22,7 @@ tenant_name = 'user1-project'
 credentials = get_nova_credentials_tenant(username, password, 
                                           tenant_name, '2')
 nova_client = Client(**credentials)
-s = nova_client.servers.find(name='app_vm')
+s = nova_client.servers.find(name=vm_name)
 print("server id: %s" % s.id)
 
 neutron_credentials = get_credentials_tenant_one(username, password, tenant_name)
